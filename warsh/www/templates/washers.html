@@ -1,0 +1,75 @@
+<ion-nav-view>
+    <ion-view class="background" title="CAR WASH">
+        <div class="my_nav bar bar-header" style="color: blue">
+            <h1 class="title">CAR WASH</h1>
+        </div>
+        <ion-content class="has-header">
+
+            <button class="button button-block button-positive" ng-click="modal2.show()">
+                Add Washer
+            </button>
+            <div class="card" style="padding: 4%">
+                <h3 class="text-center">ALL Washers</h3>
+                    <ul class="list item" ng-repeat="data in allWashers">
+                        <li >Full Name: {{data.FisrtName}} {{data.SecondName}}</li>
+                        <li >Email: {{data.email}} </li>
+                        <li >Phone Number: {{data.phone_number}}</li>
+                    </ul>
+
+            </div>
+
+
+            <script id="templates/modal2.html" type="text/ng-template">
+                <ion-modal-view>
+                    <ion-header-bar class="bar bar-header bar-positive">
+                        <h1 class="title">NEW Washer</h1>
+                        <button class="button button-clear button-primary" ng-click="modal2.hide()">Cancel</button>
+                    </ion-header-bar>
+                    <ion-content class="padding">
+
+
+                        <div class="list">
+                            <form ng-submit="saveWasher(customer)">
+                                <label class="item-input-inset item item-input item-stacked-label">
+                                    <span class="input-label">First Name</span>
+                                    <label class="item-input-wrapper">
+                                        <input type="text" placeholder="John Mark" ng-model="customer.FisrtName" >
+                                        <input type="hidden" ng-model="customer.user_id" value="{{user_id}}">
+                                    </label>
+
+                                </label>
+                                <label class="item-input-inset item item-input item-stacked-label">
+                                    <span class="input-label">Last Name</span>
+                                    <label class="item-input-wrapper">
+                                        <input type="text" placeholder="John Mark" ng-model="customer.SecondName" >
+                                        <input type="hidden" ng-model="customer.user_id" value="{{user_id}}">
+                                    </label>
+
+                                </label>
+                                <label class="item-input-inset item item-input item-stacked-label">
+                                    <span class="input-label">Phone Number</span>
+                                    <label class="item-input-wrapper">
+                                        <input type="text" placeholder="070...." ng-model="customer.phone_number">
+                                    </label>
+
+                                </label>
+                                <label class="item-input-inset item item-input item-stacked-label">
+                                    <span class="input-label">Email</span>
+                                    <label class="item-input-wrapper">
+                                        <input type="text" placeholder="name@mail.com" ng-model="customer.email" >
+                                    </label>
+
+                                </label>
+                                <div style="margin: 5%;">
+                                    <button class="button button-block button-outline button-positive">
+                                        <i class="ion ion-log-in"></i>
+                                        Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </ion-content>
+                </ion-modal-view>
+            </script>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

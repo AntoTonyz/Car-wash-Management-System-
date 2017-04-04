@@ -1,0 +1,136 @@
+<ion-nav-view>
+    <ion-view class="background" title="CAR WASH">
+        <div class="bar bar-header" style="color: blue">
+            <h1 class="title">CAR WASH</h1>
+        </div>
+        <ion-content class="has-header">
+            <h2 class="text-center">Record A Car Wash</h2>
+
+            <div class="card" style="padding: 5%">
+                    <label class="item-input-inset item item-input item-select ">
+                        <span class="input-label">Customer</span>
+                        <label class="item-input-wrapper">
+                            <select ng-model="mySelect" ng-change="showSelectValue(mySelect)">
+                                <option value="">Choose Customer Type</option>
+                                <option selected>Credit</option>
+                                <option>Cash</option>
+                            </select>
+                        </label>
+                    </label>
+            </div>
+            <div class="card" style="padding: 4%" ng-if="mySelect == 'Cash'">
+                <form ng-submit="wash_car(wash)">
+                    <label class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Vehicle Reg Number</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" placeholder="KAC 434" ng-model="wash.registration_number">
+                        </label>
+
+                    </label>
+
+                    <div class="list">
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Washer:
+                            </div>
+                            <select ng-model="wash.washer">
+                                <option value="">Choose Washer To Wash </option>
+                                <option  ng-repeat="item in washers" value={{item.id}}>{{item.FisrtName}} {{item.SecondName}}</option>
+                            </select>
+                        </label>
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Wash Type:
+                            </div>
+                            <select ng-model="wash.washType" ng-change="showWashValue(wash)">
+                                <option value="">Choose Wash Type</option>
+                                <option  ng-repeat="item in CarWashType" value={{item.id}}>{{item.washType}}</option>
+                            </select>
+                        </label>
+                        <label class="item-input-inset item item-input item-stacked-label">
+                            <span class="input-label">Total</span>
+                            <label class="item-input-wrapper" >
+                                <input type="text" placeholder="0" value="{{NonGeneralAmount}}" disabled>
+                            </label>
+
+                        </label>
+                    </div>
+                    <div style="margin: 5%;">
+                        <button class="button button-block button-outline button-positive">
+                            <i class="ion ion-log-in"></i>
+                            Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card" style="padding: 4%" ng-if="mySelect == 'Credit'">
+                <div class="list">
+                   <!-- <form ng-submit="ID(ID)">
+                    <div class="item item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input type="search" placeholder="Enter ID Number to search" ng-model="ID.ID_Number">
+                        </label>
+                        <button class="button button-small">
+                            Submit
+                        </button>
+                    </div>
+                    </form>-->
+                    <label class="item item-input item-select">
+                   <div class="input-label">
+                            Customer:
+                        </div>
+                        <select ng-model="ID.ID" ng-change="customerID(ID)">
+                            <option value="">Choose customer</option>
+                            <option  ng-repeat="item in customers" value={{item.id}}>{{item.FullName}}</option>
+                        </select>
+                    </label>
+                </div>
+
+
+
+                <form ng-submit="wash_car1(wash1)" ng-show="Btn">
+                    <label class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Vehicle Reg Number</span>
+                        <label class="item-input-wrapper">
+                            <input type="text"  ng-model="wash1.registration_number" >
+                        </label>
+
+                    </label>
+                    <div class="list">
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Washer:
+                            </div>
+                            <select ng-model="wash1.washer">
+                                <option value="">Choose Washer To Wash </option>
+                                <option  ng-repeat="item in washers" value={{item.id}}>{{item.FisrtName}} {{item.SecondName}}</option>
+                            </select>
+                        </label>
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Wash Type:
+                            </div>
+                            <select ng-model="wash1.washType" ng-change="showWash1Value(wash1)">
+                                <option value="">Choose Wash Type</option>
+                                <option ng-repeat="item in WashType" value="{{item.washType_id}}">{{item.washType}}</option>
+                            </select>
+                        </label>
+                        <label class="item-input-inset item item-input item-stacked-label">
+                            <span class="input-label">Total</span>
+                            <label class="item-input-wrapper">
+                                {{GeneralAmount}}<input type="text" ng-model="wash1.amount"  value="{{GeneralAmount}}" disabled>
+                            </label>
+
+                        </label>
+                    </div>
+                    <div style="margin: 5%;">
+                        <button class="button button-block button-outline button-positive">
+                            <i class="ion ion-log-in"></i>
+                            Submit</button>
+                    </div>
+                </form>
+            </div>
+
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

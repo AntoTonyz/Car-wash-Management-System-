@@ -1,0 +1,53 @@
+/* Empty. Add your own CSS if you like */
+.icon{
+    font-size: xx-large;
+}
+
+.icon{
+    font-size: 55px;
+    color: #1d1dbe;
+}
+.icon2{
+    font-size: 55px;
+    color: #BD362F;
+}
+
+.icon3{
+    font-size: 55px;
+    color: #4cd964;
+}
+.icon4{
+    font-size: 55px;
+    color: #8a6d3b;
+}
+.icon5{
+    font-size: 55px;
+    color: #a6e1ec;
+}
+.icon6{
+    font-size: 55px;
+    color: #e6b500;
+}
+.icon7{
+    font-size: 55px;
+    color: #ffff00;
+}
+.my_nav{
+    background-color: black;
+    color: white;
+}
+.welcome_message{
+    background-color: #0a9dc7;
+    color: white;
+}
+.background{
+    background-color: #ececec;
+}
+.menu-item{
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.row{
+    padding: 5%;
+}

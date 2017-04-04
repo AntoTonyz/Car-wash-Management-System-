@@ -1,0 +1,49 @@
+<ion-nav-view>
+    <ion-view class="background" title="CAR WASH">
+        <div class="my_nav bar bar-header" style="color: blue">
+            <h1 class="title">CAR WASH</h1>
+        </div>
+        <ion-content class="has-header">
+            <h3 class="welcome_message text-center">Reconciliations For Today</h3>
+            <div class="card" style="padding: 4%">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Washer:
+                    </div>
+                    <select ng-model="commission.id" ng-change="showCommissionValue(commission)">
+                        <option value="">Choose Washer To Wash </option>
+                        <option  ng-repeat="item in washers" value={{item.id}}>{{item.FisrtName}} {{item.SecondName}}</option>
+                    </select>
+                </label>
+            </div>
+            <div class="card" style="padding: 4%">
+
+                <div class="item">
+                    <p>Washers Name {{first}} {{last}}</p>
+                    <p>Total Sales:  {{data.total_sales}} </p>
+                    <p>Total amount collected credit: {{data.credit_given}}</p>
+                    <p>Total amount collected cash: {{data.cash_payed}}</p>
+                    <p>Total commission earned: {{data.commissions}}</p>
+                    <p>Cash to give: {{data.cashToGive}}</p>
+                    <p>Date: {{date}}</p>
+                </div>
+
+                <div class="list">
+                <form  ng-submit="Cash(cash)">
+                    <div class="item item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input ng-model="cash.amount" type="text" placeholder="Amount Received">
+                            <input hidden ng-model="cash.id" value="{{data.id}}">
+                        </label>
+                        <button class="button button-small" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+
+                </div>
+            </div>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

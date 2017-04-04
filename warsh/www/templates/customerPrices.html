@@ -1,0 +1,65 @@
+<ion-nav-view>
+    <ion-view class="background" title="CAR WASH">
+        <div class="my_nav bar bar-header">
+            <h1 class="title">CAR WASH</h1>
+        </div>
+        <ion-content class="has-header">
+            <button class="button button-block button-royal" ng-click="modal3.show()">
+                ADD Customer Price
+            </button>
+            <div class="card" style="padding: 4%">
+                <h3 class="text-center">Customer Prices</h3>
+                    <ul class="list item" ng-repeat="data in creditCustomers">
+                        <li>Full Name:  {{data.FullName}}</li>
+                        <li>Wash Type:  {{data.washType}} </li>
+                        <li>Amount:     {{data.rate}}</li>
+                    </ul>
+            </div>
+
+            <script id="templates/modal3.html" type="text/ng-template">
+                <ion-modal-view>
+                    <ion-header-bar class="bar bar-header bar-positive">
+                        <h1 class="title">NEW Customer Price</h1>
+                        <button class="button button-clear button-primary" ng-click="modal3.hide()">Cancel</button>
+                    </ion-header-bar>
+                    <ion-content class="padding">
+
+
+                        <div class="list">
+
+                                <label class="item item-input item-select">
+                                    <div class="input-label">
+                                        Customer Name:
+                                    </div>
+                                    <select ng-model="cust.id" >
+                                        <option value="">Choose customer</option>
+                                        <option  ng-repeat="item in customers" value={{item.id}}>{{item.FullName}}</option>
+                                    </select>
+                                </label>
+                                <label class="item item-input item-select">
+                                    <div class="input-label">
+                                        Wash Type:
+                                    </div>
+                                    <select ng-model="cust.washType">
+                                        <option value="">Choose Wash Type</option>
+                                        <option ng-repeat="item in WashType" value="{{item.id}}">{{item.washType}}</option>
+                                    </select>
+                                </label>
+                                <label class="item-input-inset item item-input item-stacked-label">
+                                    <span class="input-label">Amount</span>
+                                    <label class="item-input-wrapper">
+                                        <input type="text" placeholder="ksh 100" ng-model="cust.rate" required>
+                                    </label>
+
+                                </label>
+                            <div>
+                                    <button class="button button-full button-positive" ng-click="customerPrice(cust)">Create</button>
+                                </div>
+
+                        </div>
+                    </ion-content>
+                </ion-modal-view>
+            </script>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

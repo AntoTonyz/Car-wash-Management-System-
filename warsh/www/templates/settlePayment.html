@@ -1,0 +1,62 @@
+<ion-nav-view>
+    <ion-view class="background" title="CAR WASH">
+        <div class="my_nav bar bar-header" style="color: blue">
+            <h1 class="title">CAR WASH</h1>
+        </div>
+        <ion-content class="has-header">
+            <h2 class="welcome_message text-center">Settle Debit Payment</h2>
+            <div class="card" style="padding: 4%">
+                <form ng-submit="client(user)">
+                    <div class="list">
+                        <h4>Check The Customer's Debit </h4>
+                            <label class="item item-input item-select">
+                                <div class="input-label">
+                                    Customer:
+                                </div>
+                                <select ng-model="user.user" ng-change="client(user)">
+                                    <option value="">Choose customer</option>
+                                    <option  ng-repeat="item in customers" value={{item.id}}>{{item.FullName}}</option>
+                                </select>
+                            </label>
+                        </div>
+
+
+                </form>
+            </div>
+            <div class="card" style="padding: 4%">
+                <ul class="list">
+                    <h4 class="text-center">Customer Details</h4>
+                    <li class="item">
+                        <p>Full Name: {{name}}</p>
+                        <p>Phone Number:  {{phone}}</p>
+                        <p>Total Debit:  {{amount}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="card" style="padding: 4%">
+                <form ng-submit="Pay_debit(debit)">
+                    <div class="list">
+                        <h4 class="text-center">Enter Customer's Payed Amount</h4>
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Customer:
+                            </div>
+                            <select ng-model="debit.user" >
+                                <option value="">Choose customer</option>
+                                <option  ng-repeat="item in customers" value={{item.id}}>{{item.FullName}}</option>
+                            </select>
+                        </label>
+                        <label class="item-input-inset item item-input item-stacked-label">
+                            <span class="input-label">Amount Payed</span>
+                            <label class="item-input-wrapper">
+                                <input type="text" placeholder="070" ng-model="debit.amount" required>
+                            </label>
+
+                        </label>
+                        <button type="submit" class="button button-block button-positive button-outline">Pay</button>
+                    </div>
+                </form>
+            </div>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

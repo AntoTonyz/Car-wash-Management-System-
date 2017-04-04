@@ -1,0 +1,59 @@
+<ion-nav-view>
+    <ion-view class="background" title="CAR WASH">
+        <div class="my_nav bar bar-header" style="color: blue">
+            <h1 class="title">CAR WASH</h1>
+        </div>
+        <ion-content class="has-header">
+
+            <button class="button button-full button-royal" ng-click="modal.show()">
+                ADD EXPENSE
+            </button>
+            <div class="card" style="padding: 4%">
+                <h3  class="text-center">Expenses</h3>
+                    <ul class="list item" ng-repeat="data in expenses">
+
+                        <li>Expense: {{data.name}}</li>
+                        <li>Amount: {{data.amount}} ksh</li>
+                        <li>Date:   {{data.created_at}}</li>
+                    </ul>
+
+            </div>
+
+
+            <script id="templates/modal.html" type="text/ng-template">
+                <ion-modal-view>
+                    <ion-header-bar class="bar bar-header bar-positive">
+                        <h1 class="title">NEW EXPENSE</h1>
+                        <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+                    </ion-header-bar>
+                    <ion-content class="padding">
+
+
+                        <div class="list">
+                            <label class="item item-input item-select">
+                                    <div class="input-label">
+                                    Expense
+                                    </div>
+                                    <select ng-model="newExpense.name">
+                                        <option value="">Choose one</option>
+                                        <option>Soap</option>
+                                        <option>Lunch</option>
+                                        <option>Water</option>
+                                    </select>
+                                </label>
+                            <label class="item item-input">
+                                <span class="input-label">Description</span>
+                                <input ng-model="newExpense.description" type="text">
+                            </label>
+                            <label class="item item-input">
+                                <span class="input-label">Amount</span>
+                                <input ng-model="newExpense.amount" type="number">
+                            </label>
+                            <button class="button button-full button-positive" ng-click="createExpense(newExpense)">Create</button>
+                        </div>
+                    </ion-content>
+                </ion-modal-view>
+            </script>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

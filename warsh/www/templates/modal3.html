@@ -1,0 +1,41 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">NEW Customer Price</h1>
+        <button class="button button-clear button-primary" ng-click="modal3.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+
+
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Customer Name:
+                </div>
+                <select ng-model="cust.id" >
+                    <option value="">Choose customer</option>
+                    <option  ng-repeat="item in customers" value={{item.id}}>{{item.FullName}}</option>
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Wash Type:
+                </div>
+                <select ng-model="cust.washType">
+                    <option value="">Choose Wash Type</option>
+                    <option ng-repeat="item in WashType" value="{{item.id}}">{{item.washType}}</option>
+                </select>
+            </label>
+            <label class="item-input-inset item item-input item-stacked-label">
+                <span class="input-label">Amount</span>
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="ksh 100" ng-model="cust.rate" required>
+                </label>
+
+            </label>
+            <div style="margin: 5%;">
+                <button class="button button-full button-positive" ng-click="customerPrice(cust)">Create</button>
+
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,41 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">NEW Wash Type</h1>
+        <button class="button button-clear button-primary" ng-click="modal2.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+
+
+        <div class="list">
+            <form ng-submit="general_customer(customer)">
+                <label class="item-input-inset item item-input item-stacked-label">
+                    <span class="input-label">Full Name</span>
+                    <label class="item-input-wrapper">
+                        <input type="text" placeholder="John Mark" ng-model="customer.FullName" required>
+                        <input type="hidden" ng-model="customer.user_id" value="{{user_id}}">
+                    </label>
+
+                </label>
+                <label class="item-input-inset item item-input item-stacked-label">
+                    <span class="input-label">Phone Number</span>
+                    <label class="item-input-wrapper">
+                        <input type="text" placeholder="070...." ng-model="customer.phone_number" required>
+                    </label>
+
+                </label>
+                <label class="item-input-inset item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <label class="item-input-wrapper">
+                        <input type="text" placeholder="name@mail.com" ng-model="customer.email" required>
+                    </label>
+
+                </label>
+                <div style="margin: 5%;">
+                    <button class="button button-block button-outline button-positive">
+                        <i class="ion ion-log-in"></i>
+                        Submit</button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-modal-view>

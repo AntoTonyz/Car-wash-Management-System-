@@ -1,0 +1,25 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">NEW Wash Type</h1>
+        <button class="button button-clear button-primary" ng-click="modal1.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+
+
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">Wash Type Name</span>
+                <input ng-model="newWashType.name" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Amount</span>
+                <input ng-model="newWashType.amount" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Commission</span>
+                <input ng-model="newWashType.commission" type="number">
+            </label>
+            <button class="button button-full button-positive" ng-click="createWashType(newWashType)">Create</button>
+        </div>
+    </ion-content>
+</ion-modal-view>

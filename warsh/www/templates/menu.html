@@ -1,0 +1,64 @@
+<ion-nav-view>
+
+    <ion-view class="background" title="CAR WASH">
+        <div class="my_nav bar bar-header">
+            <h1 class="title">CAR WASH</h1>
+        </div>
+
+        <ion-content class="has-header text-center">
+            <div class="welcome_message bar bar-header">
+                <h1 class="title">Welcome {{profile.FisrtName}}  {{profile.SecondName}}</h1>
+            </div>
+
+            <div class=" text-center" style="padding-top: 35px;">
+                <div class="row" >
+                    <div class="menu-item col-33" ng-click="generalCustomer()">
+                        <i class="icon ion-person-add"></i><br/>
+                        <i>Add Customer</i>
+                    </div>
+                    <div class="menu-item col-33" ng-click="Prices()">
+                        <i class="icon3 ion-document"></i><br/>
+                        <i>Customer Prices</i>
+                    </div>
+                    <div class="menu-item col-33" ng-click="my_washTypes()">
+                        <i class="icon4 ion-key"></i><br/>
+                        <i>Add Wash Type</i>
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="menu-item col-33" ng-click="washCar()">
+                        <i class="icon5 ion-document"></i><br/>
+                        <i>Record Washed Car</i>
+                    </div>
+                    <div class="menu-item col-33" ng-click="myExpenses()">
+                        <i class="icon6 ion-cash"></i><br/>
+                        <i>Expenses</i>
+                    </div>
+                    <div class="menu-item col-33" ng-click="myCommission()">
+                        <i class="icon7 ion-cash"></i><br/>
+                        <i>Reconciliation</i>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="menu-item col-33" ng-click="addWasher()">
+                        <i class="icon ion-person-add"></i><br/>
+                        <i>Add Washer</i>
+                    </div>
+                    <div class="menu-item col-33" ng-click="settlePayment()">
+                        <i class="icon4 ion-cash"></i><br/>
+                        <i>Settle Credit</i>
+                    </div>
+                    <div class="menu-item col-33" ng-click="logout()">
+                        <i class="icon2 ion-log-out"></i><br/>
+                        <i>Logout</i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" style="padding: 5%">
+                <img src="img/car-wash.png" alt="CAR WASH" style="width:150cm;height: 30%" />
+            </div>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

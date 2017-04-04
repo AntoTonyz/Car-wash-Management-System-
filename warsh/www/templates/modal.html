@@ -1,0 +1,32 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">NEW Expense</h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+
+
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Expense
+                </div>
+                <select ng-model="newExpense.name">
+                    <option value="">Choose one</option>
+                    <option>Soap</option>
+                    <option>Lunch</option>
+                    <option>Water</option>
+                </select>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Description</span>
+                <input ng-model="newExpense.description" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Amount</span>
+                <input ng-model="newExpense.amount" type="number">
+            </label>
+            <button class="button button-full button-positive" ng-click="createWashType(newExpense)">Create</button>
+        </div>
+    </ion-content>
+</ion-modal-view>

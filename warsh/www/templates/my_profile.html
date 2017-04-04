@@ -1,0 +1,52 @@
+<ion-nav-view>
+    <ion-view class="background" title="My title">
+        <div class="my_nav bar bar-header my_red">
+            <h1 class="title">Car Wash</h1>
+        </div>
+        <i class=""></i>
+        <ion-content class="has-header">
+            <h2 class="welcome_message text-center">My Profile</h2>
+            <div class="card" style="padding: 4%">
+                <form ng-submit="profile_update(profile)">
+                    <label class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Username</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" placeholder="John" ng-model="profile.username">
+                            <input type="hidden" ng-model="profile.user_id">
+                        </label>
+
+                    </label>
+                    <label class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">First Name</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" placeholder="John" ng-model="profile.FisrtName">
+                        </label>
+
+                    </label>
+                    <label class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Last Name</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" placeholder="John" ng-model="profile.SecondName">
+                        </label>
+
+                    </label>
+                    <label class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Phone Number</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" placeholder="070..." ng-model="profile.phone_number">
+                        </label>
+
+                    </label>
+                    <label class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Account Created At</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" disabled="disabled" value="{{profile.created}}">
+                        </label>
+
+                    </label>
+                    <button type="submit" class="button button-block button-positive button-outline">Update</button>
+                </form>
+            </div>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>
